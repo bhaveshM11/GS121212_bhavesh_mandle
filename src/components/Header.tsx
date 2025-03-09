@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "../headers.css";
 import synergyLogo from "../assets/synergyLogo.svg";
 import profile from "../assets/account.svg";
-import * as XLSX from "xlsx";
-import axios from "axios";
-import jsonData from "../store/data.json";
+// import * as XLSX from "xlsx";
+// import axios from "axios";
+// import jsonData from "../store/data.json";
 // import { Dropdown, Button, Form } from "react-bootstrap";
 
 const Header: React.FC = () => {
-  const [file, setFile] = useState(null);
+  // const [file, setFile] = useState(null);
 //   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
 //     setFile(event.target.files[0]);
 //     if (file) {
@@ -93,11 +93,11 @@ const Header: React.FC = () => {
   //     reader.readAsArrayBuffer(file);
   //   };
 
-  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
-  const [showDropdown, setShowDropdown] = useState<boolean>(false);
+  // const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+  // const [showDropdown, setShowDropdown] = useState<boolean>(false);
 
-  const handleLogin = () => setIsLoggedIn(true);
-  const handleLogout = () => setIsLoggedIn(false);
+  // const handleLogin = () => setIsLoggedIn(true);
+  // const handleLogout = () => setIsLoggedIn(false);
 
   return (
     <>
@@ -109,7 +109,7 @@ const Header: React.FC = () => {
           <h1>Data Viewer App</h1>
         </div>
         <div className="profile-dropdown">
-          <img src={profile} alt="" srcset="" />
+          <img src={profile} alt="" />
         </div>
       </div>
 

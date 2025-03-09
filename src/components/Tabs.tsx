@@ -1,10 +1,7 @@
 import "../App.css";
 import React from "react";
-import { useState, useCallback, useRef, useMemo } from "react";
+import { useState, useCallback } from "react";
 import {Planning,Stores,SKUs as skuData,Calendar as calendarData} from '../store/store.ts'
-import * as XLSX from "xlsx";
-import axios from "axios";
-import jsonData from "../store/data.json";
 import { AgGridReact } from "ag-grid-react";
 import { AllCommunityModule, ModuleRegistry } from "ag-grid-community";
 import deleteIcon from "../assets/deleteIcon.svg";
@@ -291,10 +288,13 @@ const App:React.FC = ()=>  {
   const getRowData = () => {
     switch (activeTab) {
       case "Store":
+        console.log(stores)
         return stores;
       case "SKU":
+        console.log(SKUs)
         return SKUs;
       case "Planning":
+        console.log(getPlanningData())
         return getPlanningData();
       default:
         return [];
@@ -391,7 +391,7 @@ const App:React.FC = ()=>  {
         <div className="content">
           <div className="ag-theme-alpine" style={{ height: 450 }}>
             <AgGridReact
-              rowData={getRowData() || []} // Dynamically set data based on active tab
+              rowData={getRowData() as any} 
               columnDefs={columnDefs[activeTab]}
               rowDragManaged={true}
               animateRows={true}
