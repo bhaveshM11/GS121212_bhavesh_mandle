@@ -1,0 +1,30 @@
+.header-container{
+    display: flex;
+    height: 70px;
+}
+.s-logo{
+    flex: 1;
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-left: 1%;
+}
+.s-logo-img{
+    width: 150px;
+}
+.project-title{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.profile-dropdown{
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.profile-img{
+    width: 30px;
+}
