@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../headers.css";
 import synergyLogo from "../assets/synergyLogo.svg";
 import profile from "../assets/account.svg";
+import Dropdown from 'react-bootstrap/Dropdown';
 // import * as XLSX from "xlsx";
 // import axios from "axios";
 // import jsonData from "../store/data.json";
@@ -9,12 +10,12 @@ import profile from "../assets/account.svg";
 
 const Header: React.FC = () => {
   // const [file, setFile] = useState(null);
-//   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
-//     setFile(event.target.files[0]);
-//     if (file) {
-//       console.log("Excel file uploaded:", file.name);
-//     }
-//   };
+  //   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //     setFile(event.target.files[0]);
+  //     if (file) {
+  //       console.log("Excel file uploaded:", file.name);
+  //     }
+  //   };
 
   //   const handleFileRead = async () => {
   //     if (!file) {
@@ -99,6 +100,7 @@ const Header: React.FC = () => {
   // const handleLogin = () => setIsLoggedIn(true);
   // const handleLogout = () => setIsLoggedIn(false);
 
+  const [logIn,setLogin] = useState<Boolean>(false)
   return (
     <>
       <div className="header-container">
@@ -109,7 +111,19 @@ const Header: React.FC = () => {
           <h1>Data Viewer App</h1>
         </div>
         <div className="profile-dropdown">
-          <img src={profile} alt="" />
+          {/* <img src={profile} alt="" /> */}
+          
+          <Dropdown>
+            <Dropdown.Toggle variant="" id="dropdown-basic">
+            <img src={profile} alt="" />
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu>
+              {logIn ? (<> <Dropdown.Item >Log Out</Dropdown.Item>
+              <Dropdown.Item >Import Excel</Dropdown.Item></>) : <Dropdown.Item onClick={()=>setLogin(true) as any}>Log In</Dropdown.Item>}
+             
+             
+            </Dropdown.Menu>          </Dropdown>
         </div>
       </div>
 
