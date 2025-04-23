@@ -24,7 +24,7 @@ function App() {
        userId: userId,
        method: method,
      });
- 
+     console.warn(window.dataLayer)
      console.log("Login event pushed to dataLayer");
   }
   return (
